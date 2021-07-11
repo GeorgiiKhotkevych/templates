@@ -6,7 +6,6 @@ RUN apk add --no-cache \
     && pip3 install \
         awscli \
     && rm -rf /var/cache/apk/*
-
 RUN aws --version
 RUN apk --purge -v del py-pip
 CMD tail -f /dev/null
