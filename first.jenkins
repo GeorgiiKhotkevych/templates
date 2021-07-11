@@ -1,0 +1,20 @@
+#!groovy
+// check props
+properties([disableConcurrnetBuilds()])
+
+pipeline {
+	agent {
+		label 'master'
+	}
+	options {
+		buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+		timestamps()
+	}
+	stages {
+		stage("First") {
+			steps {
+				sh 'ssh root@ub1 \'hostname\''
+			}
+		}
+	}
+}
