@@ -1,6 +1,6 @@
 #!groovy
 // check props
-properties([disableConcurrnetBuilds()])
+properties([disableConcurrentBuilds()])
 
 pipeline {
   agent {
